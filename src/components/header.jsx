@@ -43,17 +43,17 @@ export function Header() {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: [0.215, 0.61, 0.355, 1] }}
-          className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-8 flex justify-center"
+          className="fixed top-0 left-0 right-0 z-50 px-4 md:px-12 py-6 md:py-8 flex justify-center"
         >
-          <div className="max-w-7xl w-full flex items-center justify-between gap-4">
+          <div className="max-w-7xl w-full flex items-center justify-between gap-2 md:gap-4">
             
             {/* Logo Box */}
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className={cn(glassBoxClass, "px-6 py-4 md:px-8 flex items-center")}
+              className={cn(glassBoxClass, "px-4 py-3 md:px-8 md:py-4 flex items-center")}
             >
               <Link href="/" className="flex items-center">
-                <Icons.Logo className="h-6 md:h-8 text-foreground" />
+                <Icons.Logo className="h-5 md:h-8 text-foreground" />
               </Link>
             </motion.div>
 
@@ -87,10 +87,10 @@ export function Header() {
             {/* Mobile Toggle Box */}
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className={cn(glassBoxClass, "md:hidden p-3")}
+              className={cn(glassBoxClass, "md:hidden p-2.5")}
             >
               <button
-                className="text-foreground p-1"
+                className="text-foreground p-0.5"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 {mobileMenuOpen ? <Icons.X className="h-5 w-5" /> : <Icons.Menu className="h-5 w-5" />}
@@ -105,21 +105,21 @@ export function Header() {
                 initial={{ opacity: 0, y: -20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                className="absolute top-full left-6 right-6 mt-4 md:hidden overflow-hidden"
+                className="absolute top-full left-4 right-4 mt-2 md:hidden overflow-hidden"
               >
-                <div className={cn(glassBoxClass, "rounded-[32px] p-8 flex flex-col gap-6")}>
+                <div className={cn(glassBoxClass, "rounded-[24px] p-6 flex flex-col gap-4")}>
                   {navLinks.map((link) => (
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="text-lg font-medium uppercase tracking-widest text-center"
+                      className="text-sm font-bold uppercase tracking-[0.2em] text-center py-2"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.name}
                     </Link>
                   ))}
                   <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    <Button className="w-full rounded-full uppercase tracking-widest text-sm py-8">
+                    <Button className="w-full rounded-full uppercase tracking-widest text-[10px] py-6 font-bold">
                       Contact Us
                     </Button>
                   </Link>

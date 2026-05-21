@@ -25,14 +25,14 @@ function VisionSection() {
     <section 
       id="vision" 
       ref={containerRef}
-      className="relative bg-foreground py-[50vh]"
+      className="relative bg-foreground py-[30vh] md:py-[50vh]"
     >
-      <div className="container mx-auto px-6 sticky top-[30vh]">
+      <div className="container mx-auto px-6 sticky top-[20vh] md:top-[30vh]">
         <div className="max-w-6xl">
-          <span className="text-[10px] uppercase tracking-[0.5em] text-background/30 font-semibold mb-12 block">
+          <span className="text-[8px] md:text-[10px] uppercase tracking-[0.5em] text-background/30 font-semibold mb-8 md:mb-12 block">
             Our Vision
           </span>
-          <div className="flex flex-wrap text-6xl md:text-[10rem] font-serif leading-[0.9] tracking-tighter">
+          <div className="flex flex-wrap text-4xl sm:text-6xl md:text-[10rem] font-serif leading-[0.9] tracking-tighter">
             {words.map((word, i) => {
               const start = i / words.length;
               const end = (i + 1) / words.length;
@@ -52,7 +52,7 @@ function VisionSection() {
           </div>
           
           <Reveal delay={0.5}>
-            <p className="mt-20 text-2xl md:text-5xl text-background/50 font-light leading-tight max-w-4xl">
+            <p className="mt-12 md:mt-20 text-xl sm:text-2xl md:text-5xl text-background/50 font-light leading-tight max-w-4xl">
               We don't just build houses; we curate environments. Our vision is to blend the boundaries between indoor and outdoor living, creating spaces that inspire and endure.
             </p>
           </Reveal>

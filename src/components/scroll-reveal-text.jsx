@@ -10,24 +10,24 @@ export function ScrollRevealText() {
     offset: ["start end", "end start"],
   });
 
-  const x1 = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
-  const x2 = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
-  const x3 = useTransform(scrollYProgress, [0, 1], ["10%", "-30%"]);
+  const x1 = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
+  const x2 = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const x3 = useTransform(scrollYProgress, [0, 1], ["5%", "-15%"]);
 
   return (
-    <section ref={containerRef} className="py-32 md:py-48 bg-background overflow-hidden flex flex-col gap-4">
+    <section ref={containerRef} className="py-20 md:py-48 bg-background overflow-hidden flex flex-col gap-2 md:gap-4">
       <motion.div style={{ x: x1 }} className="whitespace-nowrap">
-        <h2 className="text-6xl md:text-[8rem] font-serif tracking-tighter text-foreground">
+        <h2 className="text-3xl sm:text-5xl md:text-[8rem] font-serif tracking-tighter text-foreground">
           Elevating Miami's most distinctive properties
         </h2>
       </motion.div>
       <motion.div style={{ x: x2 }} className="whitespace-nowrap">
-        <h2 className="text-6xl md:text-[8rem] font-serif tracking-tighter text-muted-foreground">
+        <h2 className="text-3xl sm:text-5xl md:text-[8rem] font-serif tracking-tighter text-muted-foreground">
           through architectural mastery, engineering
         </h2>
       </motion.div>
       <motion.div style={{ x: x3 }} className="whitespace-nowrap">
-        <h2 className="text-6xl md:text-[8rem] font-serif tracking-tighter text-foreground">
+        <h2 className="text-3xl sm:text-5xl md:text-[8rem] font-serif tracking-tighter text-foreground">
           excellence, and unparalleled design.
         </h2>
       </motion.div>

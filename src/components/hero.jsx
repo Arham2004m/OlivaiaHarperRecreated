@@ -55,16 +55,16 @@ export function Hero() {
           variants={container}
           initial="hidden"
           animate="visible"
-          className="flex flex-col gap-6 md:gap-10 items-start"
+          className="flex flex-col gap-4 md:gap-10 items-start px-6"
         >
           {heroWords.map((word) => (
             <motion.div
               key={word}
               variants={item}
-              className="flex items-center gap-6 md:gap-12"
+              className="flex items-center gap-4 md:gap-12"
             >
-              <div className="w-2.5 h-2.5 md:w-4 md:h-4 rounded-full bg-accent" />
-              <h1 className="text-6xl md:text-[11rem] font-serif leading-[0.8] tracking-tighter uppercase text-foreground">
+              <div className="w-2 h-2 md:w-4 md:h-4 rounded-full bg-accent" />
+              <h1 className="text-4xl sm:text-6xl md:text-[11rem] font-serif leading-[0.8] tracking-tighter uppercase text-foreground">
                 {word}
               </h1>
             </motion.div>
@@ -74,23 +74,23 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2, duration: 1 }}
-            className="mt-16 self-center flex flex-col items-center gap-4"
+            className="mt-12 md:mt-16 self-center flex flex-col items-center gap-4"
           >
-            <span className="text-[10px] uppercase tracking-[0.5em] text-muted-foreground font-light">
+            <span className="text-[8px] md:text-[10px] uppercase tracking-[0.5em] text-muted-foreground font-light text-center">
               Scroll to explore
             </span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
             >
-              <Icons.ChevronDown className="text-muted-foreground/30 h-5 w-5 stroke-[1px]" />
+              <Icons.ChevronDown className="text-muted-foreground/30 h-4 w-4 md:h-5 md:w-5 stroke-[1px]" />
             </motion.div>
           </motion.div>
         </motion.div>
       </div>
 
       {/* 2. The Video Box (Scroll Triggered) */}
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden z-0">
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden z-0 px-4 md:px-0">
         <motion.div
           style={{ 
             width: videoWidth,

@@ -57,14 +57,14 @@ function AccordionItem({ service, index, progress }) {
       style={{ opacity: finalOpacity }}
       className="border-b border-border overflow-hidden"
     >
-      <div className="py-8 md:py-12 flex items-center gap-6">
-        <div className="w-2 h-2 rounded-full border border-foreground flex items-center justify-center p-0.5">
+      <div className="py-6 md:py-12 flex items-center gap-4 md:gap-6">
+        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full border border-foreground flex items-center justify-center p-0.5">
           <motion.div 
             style={{ scale: dotScale }}
             className="w-full h-full bg-foreground rounded-full"
           />
         </div>
-        <h3 className="text-2xl md:text-4xl font-serif">
+        <h3 className="text-xl sm:text-2xl md:text-4xl font-serif">
           {service.title}
         </h3>
       </div>
@@ -73,9 +73,17 @@ function AccordionItem({ service, index, progress }) {
         style={{ height: finalHeight }}
         className="overflow-hidden"
       >
-        <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed pl-10 pb-12 max-w-md">
+        <p className="text-sm sm:text-base md:text-xl text-muted-foreground font-light leading-relaxed pl-6 md:pl-10 pb-8 md:pb-12 max-w-md">
           {service.description}
         </p>
+        <div className="lg:hidden w-full aspect-video relative mb-8 overflow-hidden bg-muted">
+           <Image
+             src={service.image}
+             alt={service.title}
+             fill
+             className="object-cover"
+           />
+        </div>
       </motion.div>
     </motion.div>
   );
@@ -94,19 +102,19 @@ export function ScrollAccordion() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-32">
             
-            <div className="w-full lg:w-1/2 flex flex-col justify-center py-20">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center py-12 md:py-20">
               <Reveal>
-                <span className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground font-semibold mb-12 block">
+                <span className="text-[8px] md:text-[10px] uppercase tracking-[0.4em] text-muted-foreground font-semibold mb-8 md:mb-12 block">
                   Excellence Defined
                 </span>
               </Reveal>
               <Reveal delay={0.1}>
-                <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight mb-16">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight mb-12 md:mb-16 text-center md:text-left">
                   Architectural Mastery & Engineering Precision
                 </h2>
               </Reveal>
 
-              <div className="flex flex-col border-t border-border mt-8">
+              <div className="flex flex-col border-t border-border mt-4 md:mt-8">
                 {services.map((service, index) => (
                   <AccordionItem 
                     key={index} 
