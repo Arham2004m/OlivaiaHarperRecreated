@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import { SmoothScroll } from "@/components/smooth-scroll";
+import { Preloader } from "@/components/preloader";
+import { AppProvider } from "@/lib/app-context";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const gallient = localFont({
+  src: "../../public/fonts/Gallient.woff2",
+  variable: "--font-gallient",
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Olivia Harper Homes | Luxury Homebuilding in Florida",
+  description: "Elevating Miami's most distinctive properties through architectural mastery and engineering excellence.",
 };
 
 export default function RootLayout({
@@ -25,9 +29,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${gallient.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <AppProvider>
+          <Preloader />
+          <SmoothScroll />
+          {children}
+        </AppProvider>
+      </body>
     </html>
   );
 }
