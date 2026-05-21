@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -16,16 +15,12 @@ const gallient = localFont({
   variable: "--font-gallient",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Olivia Harper Homes | Luxury Homebuilding in Florida",
   description: "Elevating Miami's most distinctive properties through architectural mastery and engineering excellence.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html
       lang="en"

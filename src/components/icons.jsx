@@ -1,6 +1,4 @@
-import { LucideIcon, Menu, X, ChevronDown, Phone, MapPin, Mail, Globe, Share2, MessageCircle } from "lucide-react";
-
-export type Icon = LucideIcon;
+import { Menu, X, ChevronDown, Phone, MapPin, Mail, Globe, Share2, MessageCircle } from "lucide-react";
 
 export const Icons = {
   Menu,
@@ -12,7 +10,7 @@ export const Icons = {
   Instagram: Globe,
   Facebook: MessageCircle,
   Linkedin: Share2,
-  Logo: (props: React.SVGProps<SVGSVGElement>) => (
+  Logo: (props) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 227.5"

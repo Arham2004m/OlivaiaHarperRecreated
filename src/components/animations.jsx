@@ -1,16 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
 
-interface RevealProps {
-  children: ReactNode;
-  delay?: number;
-  direction?: "up" | "down" | "left" | "right";
-  duration?: number;
-}
-
-export function Reveal({ children, delay = 0, direction = "up", duration = 0.8 }: RevealProps) {
+export function Reveal({ children, delay = 0, direction = "up", duration = 0.8 }) {
   const directions = {
     up: { y: 40 },
     down: { y: -40 },
@@ -34,7 +26,7 @@ export function Reveal({ children, delay = 0, direction = "up", duration = 0.8 }
   );
 }
 
-export function TextSplitReveal({ text, delay = 0 }: { text: string; delay?: number }) {
+export function TextSplitReveal({ text, delay = 0 }) {
   const words = text.split(" ");
 
   const container = {
@@ -50,7 +42,7 @@ export function TextSplitReveal({ text, delay = 0 }: { text: string; delay?: num
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring" as const,
+        type: "spring",
         damping: 12,
         stiffness: 100,
       },
@@ -59,7 +51,7 @@ export function TextSplitReveal({ text, delay = 0 }: { text: string; delay?: num
       opacity: 0,
       y: 20,
       transition: {
-        type: "spring" as const,
+        type: "spring",
         damping: 12,
         stiffness: 100,
       },

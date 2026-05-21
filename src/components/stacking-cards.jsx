@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Reveal } from "./animations";
 
 const projects = [
@@ -26,15 +26,7 @@ const projects = [
   },
 ];
 
-interface CardProps {
-  project: typeof projects[0];
-  index: number;
-  progress: MotionValue<number>;
-  range: [number, number];
-  targetScale: number;
-}
-
-function Card({ project, index, progress, range, targetScale }: CardProps) {
+function Card({ project, index, progress, range, targetScale }) {
   const containerRef = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
 

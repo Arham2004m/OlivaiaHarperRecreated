@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Reveal } from "./animations";
 
 const services = [
@@ -28,13 +28,7 @@ const services = [
   },
 ];
 
-interface AccordionItemProps {
-  service: typeof services[0];
-  index: number;
-  progress: MotionValue<number>;
-}
-
-function AccordionItem({ service, index, progress }: AccordionItemProps) {
+function AccordionItem({ service, index, progress }) {
   const start = index / services.length;
   const end = (index + 1) / services.length;
   
@@ -88,7 +82,7 @@ function AccordionItem({ service, index, progress }: AccordionItemProps) {
 }
 
 export function ScrollAccordion() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end end"],

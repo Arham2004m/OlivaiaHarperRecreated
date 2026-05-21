@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence, Easing } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Icons } from "./icons";
 
@@ -27,7 +27,7 @@ export function Preloader() {
       y: "-100%",
       transition: {
         duration: 1.2,
-        ease: [0.76, 0, 0.24, 1] as Easing,
+        ease: [0.76, 0, 0.24, 1],
       },
     },
   };
@@ -39,7 +39,7 @@ export function Preloader() {
       y: 0,
       transition: {
         duration: 1.5,
-        ease: [0.215, 0.61, 0.355, 1] as Easing,
+        ease: [0.215, 0.61, 0.355, 1],
       }
     },
   };

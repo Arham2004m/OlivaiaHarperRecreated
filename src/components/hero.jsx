@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform, Easing } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Icons } from "./icons";
 
@@ -24,13 +24,13 @@ const item = {
     y: 0,
     transition: {
       duration: 1,
-      ease: [0.215, 0.61, 0.355, 1] as Easing,
+      ease: [0.215, 0.61, 0.355, 1],
     },
   },
 };
 
 export function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
